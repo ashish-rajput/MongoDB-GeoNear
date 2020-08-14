@@ -9,6 +9,9 @@ require('dotenv').config();
 
 const { APP_CONFIG, DB_CONFIG } = require('./config');
 
+const { USER } = require('./routes');
+
+
 //create an express app
 const app = express();
 
@@ -51,6 +54,8 @@ app.use(function (req, res, next) {
 app.use(APP_CONFIG.logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use('/user', USER);
 
 
 // fallback for 404 or other routes
