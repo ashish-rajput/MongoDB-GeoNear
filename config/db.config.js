@@ -11,7 +11,7 @@ const options = {
 
 
 function connectDB() {
-    const url = `mongodb://localhost:27017/codebrew`;
+    const url = `mongodb://localhost:27017/geo-near`;
     return mongoose.connect(url, options);
 }
 
